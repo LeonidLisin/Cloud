@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MainController"
+            prefHeight="600.0" prefWidth="575.0">
+
+    <VBox fx:id="main">
+        <HBox>
+            <VBox fx:id = "mainButtonsPanel">
+                <ListView fx:id="fileList" onMouseClicked="#changeDir"/>
+                <HBox>
+                    <Button fx:id="downloadButton" text="Download" onMouseClicked="#downloadFile"/>
+                    <Button fx:id="deleteButton" text="Delete" onMouseClicked="#delete"/>
+                    <Button fx:id="mkDirButton" text="Make directory" onMouseClicked="#makeDirManually"/>
+                    <Button fx:id="renameButton" text="Rename" onMouseClicked="#rename"/>
+                </HBox>
+            </VBox>
+            <TextArea fx:id = "console"/>
+        </HBox>
+        <VBox fx:id = "authPanel">
+            <TextField fx:id="regName" text="Name"/>
+            <TextField fx:id="regPassword" text="Password"/>
+            <Button fx:id="registerButton" text="Register" onMouseClicked="#tryToReg"/>
+            <TextField fx:id="authName" text="Name"/>
+            <TextField fx:id="authPassword" text="Password"/>
+            <Button fx:id="authorizeButton" text="Authorize" onMouseClicked="#tryToAuth"/>
+        </VBox>
+    </VBox>
+
+</AnchorPane>
